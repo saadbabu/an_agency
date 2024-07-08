@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "43008222370",
+    "project_id": "an-agency-eae9a",
+    "storage_bucket": "an-agency-eae9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43008222370:android:0076ecb87f955805baa3fb",
+        "android_client_info": {
+          "package_name": "com.example.an_agency"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPu2TkTg1E2nSvfAkzNlZTrhyfCDw-I3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
