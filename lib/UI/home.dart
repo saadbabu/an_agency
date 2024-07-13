@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return SideMenu(
-      background: const Color(0xff31837d),
+      background: Colors.blueGrey[900],
       key: sideMenuKey,
       menu: const sidebar(),
       maxMenuWidth: 250,
@@ -57,12 +57,12 @@ class _HomeState extends State<Home> {
                                   Color(0xff89417e)
                                 ]),
 
-                                boxShadow: const [
+                                boxShadow:[
                                   BoxShadow(
-                                      color: Colors.grey,
-                                      spreadRadius: 1,
-                                      blurRadius: 1,
-                                      offset: Offset(0, 3))
+                                      color: Colors.white.withOpacity(0.4),
+                                      spreadRadius: 2,
+                                      blurRadius: 4,
+                                      offset: Offset(1, 3))
                                 ]),
                             child: const Icon(
                               Icons.menu_rounded,
@@ -87,12 +87,12 @@ class _HomeState extends State<Home> {
                             Color(0xff89417e)
                           ]),
 
-                          boxShadow: const [
+                          boxShadow:[
                             BoxShadow(
-                                color: Colors.grey,
-                                spreadRadius: 1,
-                                blurRadius: 1,
-                                offset: Offset(0, 3))
+                                color: Colors.white.withOpacity(0.4),
+                                spreadRadius: 2,
+                                blurRadius: 4,
+                                offset: const Offset(1, 3))
                           ]),
                       child: const Icon(
                         Icons.notifications_none,
@@ -118,11 +118,11 @@ class _HomeState extends State<Home> {
                       decoration: InputDecoration(
                         suffixIcon: GestureDetector(
                           onTap: (){},
-                            child: Icon(Icons.send, color: Colors.white,
+                            child: const Icon(Icons.send, color: Colors.white,
                             )),
-                        contentPadding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 10.0),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 10.0),
                         hintText: 'Enter your search query',
-                        hintStyle: TextStyle(color: Colors.white),
+                        hintStyle: const TextStyle(color: Colors.white),
                         border: InputBorder.none,
                       ),
                       validator: (value) {

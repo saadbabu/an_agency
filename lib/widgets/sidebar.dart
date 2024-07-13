@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class sidebar extends StatefulWidget {
@@ -16,18 +17,19 @@ class _sidebarState extends State<sidebar> {
       child: ListView(
         children: [
           const ListTile(
-            leading: CircleAvatar(
-              maxRadius: 30,
-              backgroundImage: AssetImage("assets/mine.jpg"),
-            ),
+            // leading: CircleAvatar(
+            //   maxRadius: 30,
+            //   backgroundImage: AssetImage("assets/mine.jpg"),
+            // ),
             title: Text(
               "Muhammad Saad",
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16,
+              color: Colors.white),
             ),
             subtitle: Text(
               "m.saad543210@gmail.com",
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 10,
                   fontWeight: FontWeight.bold),
             ),
@@ -44,7 +46,7 @@ class _sidebarState extends State<sidebar> {
               });
             },
             boxcolor:
-                (setbox == 1) ? const Color(0xffeef8f7) : Colors.transparent,
+                (setbox == 1) ? Colors.transparent : Colors.transparent,
           ),
           SizedBox(
             height: size.height * 0.03,
@@ -58,7 +60,7 @@ class _sidebarState extends State<sidebar> {
               });
             },
             boxcolor:
-                (setbox == 2) ? const Color(0xffeef8f7) : Colors.transparent,
+                (setbox == 2) ? Colors.transparent : Colors.transparent,
           ),
           SizedBox(
             height: size.height * 0.03,
@@ -72,7 +74,7 @@ class _sidebarState extends State<sidebar> {
               });
             },
             boxcolor:
-                (setbox == 3) ? const Color(0xffeef8f7) : Colors.transparent,
+                (setbox == 3) ? Colors.transparent : Colors.transparent,
           ),
           SizedBox(
             height: size.height * 0.03,
@@ -86,7 +88,7 @@ class _sidebarState extends State<sidebar> {
               });
             },
             boxcolor:
-                (setbox == 4) ? const Color(0xffeef8f7) : Colors.transparent,
+                (setbox == 4) ? Colors.transparent : Colors.transparent,
           ),
           SizedBox(
             height: size.height * 0.03,
@@ -100,7 +102,7 @@ class _sidebarState extends State<sidebar> {
               });
             },
             boxcolor:
-                (setbox == 5) ? const Color(0xffeef8f7) : Colors.transparent,
+                (setbox == 5) ? Colors.transparent : Colors.transparent,
           ),
           SizedBox(
             height: size.height * 0.05,
@@ -120,7 +122,7 @@ class _sidebarState extends State<sidebar> {
               });
             },
             boxcolor:
-                (setbox == 6) ? const Color(0xffeef8f7) : Colors.transparent,
+                (setbox == 6) ? Colors.transparent : Colors.transparent,
           ),
         ],
       ),
@@ -140,23 +142,54 @@ class _sidebarState extends State<sidebar> {
             borderRadius: BorderRadius.circular(30), color: boxcolor),
         child: Row(
           children: [
-            Icon(
-              iconData,
-              size: 28,
-              color: Colors.black,
-            ),
+            GradientIcon(iconData, 30,
+          LinearGradient(colors: [
+            Color(0xffc94c47),
+            Color(0xffa64666),
+            Color(0xff89417e)
+          ])),
+            // Icon(
+            //   iconData,
+            //   size: 28,
+            //   color: Colors.white,
+            // ),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.05,
             ),
+            // GradientText(name, gradient: LinearGradient(colors: [
+            //   Color(0xffc94c47),
+            //   Color(0xffa64666),
+            //   Color(0xff89417e)
+            // ]))
             Text(
               name,
               style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black),
+                  color: Colors.white),
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class GradientIcon extends StatelessWidget{
+  GradientIcon(this.icon, this.size, this.gradient);
+  final IconData icon;
+  final double size;
+  final Gradient gradient;
+
+  @override
+  Widget build(BuildContext context){
+    return ShaderMask(shaderCallback: (bounds) => gradient.createShader(
+      Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+    ),
+      child: Icon(
+        icon,
+        size: size,
+        color: Colors.white,
       ),
     );
   }
